@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talent Engine</title>
+<style>
+html{min-height:100%;background:linear-gradient(160deg,#eaf5ff 0%,#b9dcff 100%) fixed}
+body{font-family:system-ui,sans-serif;max-width:820px;margin:2rem auto;padding:2rem;color:#14304d;
+  background:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(30,100,180,.15)}
+h1{color:#1b5e9b;margin-top:0}
+a{color:#1b6fb8}
+label{display:block;margin-top:.8rem;font-weight:600;color:#1b4a7a}
+input,select,textarea{width:100%;padding:.55rem;margin-top:.2rem;box-sizing:border-box;
+  border:1px solid #bcd8f5;border-radius:8px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid #6fb4f5;border-color:#6fb4f5}
+button{margin-top:1.2rem;padding:.7rem 1.4rem;cursor:pointer;border:0;border-radius:8px;
+  background:#bfe3ff;color:#0b3d66;font-weight:600;font-size:1rem;transition:background .2s}
+button:hover{background:#9fd2fb}
+.err{background:#fde8e8;color:#8a1c1c;padding:.6rem 1rem;border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{background:#eaf5ff;color:#1b5e9b}
+td,th{padding:.55rem;border-bottom:1px solid #dcebfa;text-align:left}
+tr:hover td{background:#f5faff}
+.priority{color:#11f601;font-weight:700}
+.review{color:#0342fe;font-weight:600}
+.low{color:#f90f0b}
+small{color:#0053a5}
+table, p, small{font-weight:700}
+</style>
+{% block body %}{% endblock %}
+</html>

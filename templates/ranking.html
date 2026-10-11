@@ -1,0 +1,23 @@
+{% extends "layout.html" %}{% block body %}
+<h1>Classement des candidats</h1>
+<p><small>🟢 ≥ 70 : à examiner en priorité ·  🔵 40-69 : à étudier · 🔴 &lt; 40 : faible</small></p>
+<table>
+<tr><th>#</th><th>Candidat</th><th>Score</th><th>Statut</th><th>Détail (compét. / preuves / motiv. / dispo / complétude)</th></tr>
+{% for r in rows %}
+<tr>
+  <td>{{ loop.index }}</td>
+  <td><a href="{{ url_for('candidate', cid=r.id, key=request.args.get('key')) }}">{{ r.name }}</a><br><small>{{ r.email }}</small>
+    {% if r.extras %}<br><small>Autres compétences : {{ r.extras|join(', ') }}</small>{% endif %}</td>
+  <td><b>{{ r.score }}</b>/100</td>
+  <td class="{{ r.tier }}">{{ {'priority':'Priorité','review':'À étudier','low':'Faible'}[r.tier] }}</td>
+  <td><small>{{ r.detail.competences }} / {{ r.detail.preuves }} / {{ r.detail.motivation }} / {{ r.detail.disponibilite }} / {{ r.detail.completude }}</small></td>
+</tr>
+{% else %}<tr><td colspan="5">Aucune candidature pour l'instant.</td></tr>{% endfor %}
+</table>
+{% endblock %}
+
+
+
+
+
+

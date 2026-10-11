@@ -1,0 +1,29 @@
+{% extends "layout.html" %}{% block body %}
+<p><a href="{{ url_for('ranking', key=request.args.get('key')) }}">← Retour au classement</a></p>
+<h1>{{ c.name }}</h1>
+<p><b style="font-size:1.4rem">{{ c.score }}/100</b>
+   <span class="{{ c.tier }}">· {{ {'priority':'Priorité','review':'À étudier','low':'Faible'}[c.tier] }}</span>
+   <br><small>Reçue le {{ c.created }}</small></p>
+
+<h3>Candidature</h3>
+<table>
+  <tr><th>Email</th><td>{{ c.email }}</td></tr>
+  <tr><th>Niveau d'études</th><td>{{ c.level or '—' }}</td></tr>
+  <tr><th>Compétences</th><td>{{ c.skills }}
+    {% if c.extras %}<br><small>Hors liste (0 point) : {{ c.extras|join(', ') }}</small>{% endif %}</td></tr>
+  <tr><th>GitHub / portfolio</th><td>{% if c.github %}<a href="{{ c.github }}" target="_blank" rel="noopener noreferrer">{{ c.github }}</a>{% else %}—{% endif %}</td></tr>
+  <tr><th>Projet réalisé</th><td style="white-space:pre-wrap">{{ c.projects or '—' }}</td></tr>
+  <tr><th>Motivation</th><td style="white-space:pre-wrap">{{ c.motivation }}</td></tr>
+  <tr><th>Disponibilité</th><td>{{ {'full':'Temps plein','partial':'Temps partiel','none':'Peu disponible'}[c.availability] }}</td></tr>
+</table>
+
+<h3>Pourquoi ce score ?</h3>
+<table>
+  <tr><th>Critère</th><th>Points</th></tr>
+  <tr><td>Compétences</td><td>{{ c.detail.competences }} / 35</td></tr>
+  <tr><td>Preuves (lien + projet)</td><td>{{ c.detail.preuves }} / 25</td></tr>
+  <tr><td>Motivation</td><td>{{ c.detail.motivation }} / 15</td></tr>
+  <tr><td>Disponibilité</td><td>{{ c.detail.disponibilite }} / 15</td></tr>
+  <tr><td>Complétude</td><td>{{ c.detail.completude }} / 10</td></tr>
+</table>
+{% endblock %}

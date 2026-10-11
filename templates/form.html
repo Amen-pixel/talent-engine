@@ -1,0 +1,22 @@
+{% extends "layout.html" %}{% block body %}
+<h1>Candidature SKULLVI</h1>
+{% if errors %}<div class="err"><ul>{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+<form method="post">
+  <label>Nom complet *<input name="name" value="{{ f.get('name','') }}" required></label>
+  <label>Email *<input name="email" type="email" value="{{ f.get('email','') }}" required></label>
+  <label>Niveau d'études<input name="level" value="{{ f.get('level','') }}" placeholder="ex : Licence 3 Génie Logiciel"></label>
+  <label>Compétences * <small>(séparées par des virgules)</small>
+    <input name="skills" value="{{ f.get('skills','') }}" placeholder="Python, SQL, Git" required></label>
+  <label>Lien GitHub / portfolio<input name="github" value="{{ f.get('github','') }}" placeholder="https://github.com/..."></label>
+  <label>Un projet que vous avez réalisé<textarea name="projects" rows="3">{{ f.get('projects','') }}</textarea></label>
+  <label>Motivation * <small>(pourquoi SKULLVI ?)</small>
+    <textarea name="motivation" rows="4" required>{{ f.get('motivation','') }}</textarea></label>
+  <label>Disponibilité à partir du 2 novembre
+    <select name="availability">
+      <option value="full">Temps plein</option>
+      <option value="partial" {{ 'selected' if f.get('availability')=='partial' }}>Temps partiel</option>
+      <option value="none" {{ 'selected' if f.get('availability')=='none' }}>Peu disponible</option>
+    </select></label>
+  <button>Envoyer ma candidature</button>
+</form>
+{% endblock %}
