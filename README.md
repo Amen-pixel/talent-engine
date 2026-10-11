@@ -50,6 +50,6 @@ Validation (cas valides / invalides), score (candidat parfait = 100, vide < 10, 
 - Les compétences recherchées sont fixes ; à rendre configurables par programme.
 
 ## Usage de l'IA
-- J'ai utilisé l'IA pour : (ex. générer une première version du code, relire, proposer des tests).
+- J'ai utilisé l'IA pour :  générer une première version du code, relire, proposer des tests).
 - Ma contribution personnelle :  les critères et pondérations, les cas limites, les tests que j'ai ajoutés, ce que j'ai modifié/refusé.
 - Ce que je sais expliquer sans l'IA : le flux complet, le calcul du score .
