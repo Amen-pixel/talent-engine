@@ -1,6 +1,6 @@
 # Talent Engine — mini-challenge SKULLVI
 
-Petite application web qui **reçoit des candidatures, les valide, leur attribue un score sur 100 et les classe** pour repérer les profils à examiner en priorité.
+Application web qui **reçoit des candidatures, les valide, leur attribue un score sur 100 et les classe** pour repérer les profils à examiner en priorité.
 
 ## Lancer (2 minutes)
 ```bash
