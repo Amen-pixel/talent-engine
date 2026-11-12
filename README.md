@@ -19,8 +19,8 @@ Formulaire → validation → score → SQLite → page de classement
 Un fichier = un rôle : `scoring.py` (la logique, sans dépendance), `store.py` (la base), `app.py` (les pages).
 
 ## Données collectées
-Nom*, email*, niveau d'études, compétences*, lien GitHub/portfolio, un projet réalisé, motivation*, disponibilité au 2 novembre. (* obligatoire)
-Le score et son détail sont enregistrés avec chaque candidat → **le classement est explicable**.
+Nom, email, niveau d'études, compétences, lien GitHub/portfolio, un projet réalisé, motivation, disponibilité au 2 novembre. ( obligatoire)
+Le score et son détail sont enregistrés avec chaque candidat → le classement est explicable.
 
 ## Logique de score (/100)
 | Critère | Points | Règle |
