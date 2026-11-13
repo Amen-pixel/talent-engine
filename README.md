@@ -11,7 +11,7 @@ python -m pytest        # 12 tests
 ```
 Option : `ADMIN_KEY=secret python app.py` protège le classement (`/ranking?key=secret`).
 
-## Comment ça marche
+## Comment ça marche 
 ```
 Formulaire → validation → score → SQLite → page de classement
  (app.py)   (scoring.py) (scoring.py) (store.py)   (ranking.html)
@@ -33,7 +33,7 @@ Le score et son détail sont enregistrés avec chaque candidat → le classement
 
 **Statuts** : ≥ 70 → **priorité** · 40-69 → **à étudier** · < 40 → **faible**. À égalité, le plus ancien passe devant.
 
-## Choix assumés
+## Choix assumés :
 - **Règles simples plutôt que du ML** : pas de données historiques pour entraîner un modèle, et un score doit pouvoir être justifié à un candidat. Les poids sont en haut de `scoring.py`, faciles à ajuster.
 - **Le score aide à trier, il ne décide pas** : un humain examine toujours les profils.
 - **Pas de note sur la qualité de l'écriture** de la motivation (trop subjectif, injuste pour qui écrit moins bien en français).
